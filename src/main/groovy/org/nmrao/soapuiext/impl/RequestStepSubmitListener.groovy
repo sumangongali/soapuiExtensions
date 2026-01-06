@@ -2,14 +2,14 @@ package org.nmrao.soapuiext.impl
 import com.eviware.soapui.model.iface.Submit
 import com.eviware.soapui.model.iface.SubmitContext
 import com.eviware.soapui.model.iface.SubmitListener
-import org.apache.log4j.Logger
+import org.apache.logging.log4j.Logger
 
-import static org.apache.log4j.Logger.getLogger
+import org.apache.logging.log4j.LogManager;
 import static org.nmrao.soapuiext.SoapUIGroovyScriptEngineHelper.getInstance
 
 class RequestStepSubmitListener implements SubmitListener {
 
-    private final static Logger log = getLogger(RequestStepSubmitListener)
+      private final static Logger log = LogManager.getLogger(RequestStepSubmitListener)
 
     @Override
     boolean beforeSubmit(Submit submit, SubmitContext context) {
