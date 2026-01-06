@@ -4,14 +4,15 @@ import com.eviware.soapui.model.testsuite.TestCaseRunContext
 import com.eviware.soapui.model.testsuite.TestCaseRunner
 import com.eviware.soapui.model.testsuite.TestStep
 import com.eviware.soapui.model.testsuite.TestStepResult
-import org.apache.log4j.Logger
+import org.apache.logging.log4j.Logger
 
-import static org.apache.log4j.Logger.getLogger
+import org.apache.logging.log4j.LogManager;
 import static org.nmrao.soapuiext.SoapUIGroovyScriptEngineHelper.getInstance
 
 class CaseRunListener extends TestRunListenerAdapter {
 
-    private final static Logger log = getLogger(CaseRunListener)
+   // private final static Logger log = getLogger(CaseRunListener)
+    private final static Logger log = LogManager.getLogger(CaseRunListener)
 
     @Override
     void beforeRun(TestCaseRunner testRunner, TestCaseRunContext runContext) {
