@@ -2,16 +2,16 @@ package org.nmrao.soapuiext.impl
 import com.eviware.soapui.model.iface.Request
 import com.eviware.soapui.model.iface.Response
 import com.eviware.soapui.model.iface.SubmitContext
-import org.apache.log4j.Logger
+import org.apache.logging.log4j.Logger
 
-import static org.apache.log4j.Logger.getLogger
+import org.apache.logging.log4j.LogManager;
 import static org.nmrao.soapuiext.SoapUIGroovyScriptEngineHelper.getInstance
 /**
  * Created by nmrao on 10/18/15.
  */
 class RequestFilter implements com.eviware.soapui.impl.wsdl.submit.RequestFilter {
 
-    private final static Logger log = getLogger(RequestFilter)
+     private final static Logger log = LogManager.getLogger(RequestFilter)
     @Override
     void filterRequest(SubmitContext context, Request request) {
         def scriptEngineHelper = getInstance('RF_FILTER_REQUEST', context, null, log)
