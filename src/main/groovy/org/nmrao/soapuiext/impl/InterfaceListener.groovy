@@ -1,14 +1,14 @@
 package org.nmrao.soapuiext.impl
 import com.eviware.soapui.model.iface.Request
 import com.eviware.soapui.model.support.InterfaceListenerAdapter
-import org.apache.log4j.Logger
+import org.apache.logging.log4j.Logger
 
-import static org.apache.log4j.Logger.getLogger
+import org.apache.logging.log4j.LogManager;
 import static org.nmrao.soapuiext.SoapUIGroovyScriptEngineHelper.getInstance
 
 class InterfaceListener extends InterfaceListenerAdapter {
 
-    private final static Logger log = getLogger(InterfaceListener)
+      private final static Logger log = LogManager.getLogger((InterfaceListener)
 
     @Override
     public void requestAdded( Request request ) {
