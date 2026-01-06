@@ -42,7 +42,22 @@ class SoapUIGroovyScriptEngineHelper {
         def loader = SoapUIGroovyScriptEngineHelper.class.getClassLoader()
         def stream = loader.getResourceAsStream('resources/script.properties')
         prop.load(stream)
-        def pre_directory = System.getenv('SOAPUI_HOME')
+        // for macos Arm processor 
+        /*
+          def pre_directory = System.properties['soapui.home'] 
+          and keep the scripts folder under soapui.home
+          eg:
+          /Applications/SoapUI-5.9.1.app/Contents/java/app/bin/scripts
+          ext 
+          /Applications/SoapUI-5.9.1.app/Contents/java/app/bin/ext
+
+          and ant build   
+
+          framework jar generated at /Users/sgongali/soapframework/soapuiExtensions-master/lib/SoapUIExtListeners.jar
+          
+        */
+        def pre_directory = System.properties['soapui.home'] 
+      //  def pre_directory = System.getenv('SOAPUI_HOME')
         def directory = pre_directory + '/' + prop.getProperty('SCRIPTS_DIR')
         def script_path = directory+ '/' + prop.getProperty(key)
         def scriptFile = new File(script_path)
