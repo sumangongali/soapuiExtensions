@@ -13,6 +13,16 @@ set _SOAPUI_HOME_ environment variable with appropriate value.
 - copy _[samples/scripts](https://github.com/nmrao/soapuiExtensions/tree/master/samples/scripts)_ directory under `$SOAPUI_HOME` 
 - And implement appropriate groovy script available under $SOAPUI_HOME/scripts. Refer [_Mappings_](https://github.com/nmrao/soapuiExtensions/blob/master/src/main/groovy/resources/script.properties) file in order to implement respective groovy script. This mapping file is used internally, it is given here for user reference, so that he can implement his respective script with the right groovy file name.
 
+- MAC USERS ARM PROCESSOR:
+     ```eg: 
+         export ANT_HOME=/opt/homebrew/bin/ant
+         export PATH=${ANT_HOME}:${PATH}
+         export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
+         export PATH=${JAVA_HOME}/bin:${PATH}
+         export SOAPUI_HOME=/Applications/SoapUI-5.9.1.app/Contents/java/app
+
+
+
 _NOTE_: for **windows** users, you may need to check `%SOAPUI_HOME%\bin\soapui.bat` which actually overwrites `SOAPUI_HOME`, need to fix `soapui.bat` script if required.
 
 If you donot wish to make any changes to `%SOAPUI_HOME%\bin\soapui.bat`  file on windows, then you want to copy that groovy files under `%SOAPUI_HOME%\bin\scripts` directory instead of `%SOAPUI_HOME%\scripts` directory and retry. If your machine is **linux** then it should work if you copy groovy files under `$SOAPUI_HOME/scripts` directory as mentioned above.
