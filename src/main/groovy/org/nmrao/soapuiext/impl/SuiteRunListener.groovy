@@ -1,13 +1,13 @@
 package org.nmrao.soapuiext.impl
 import com.eviware.soapui.model.testsuite.*
-import org.apache.log4j.Logger
+import org.apache.logging.log4j.Logger
 
-import static org.apache.log4j.Logger.getLogger
+import org.apache.logging.log4j.LogManager;
 import static org.nmrao.soapuiext.SoapUIGroovyScriptEngineHelper.getInstance
 
 class SuiteRunListener implements TestSuiteRunListener {
 
-    private final static Logger log = getLogger(SuiteRunListener)
+   private final static Logger log = LogManager.getLogger(SuiteRunListener)
 
     @Override
     void beforeRun(TestSuiteRunner testRunner, TestSuiteRunContext runContext) {
